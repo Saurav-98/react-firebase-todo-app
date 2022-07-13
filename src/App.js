@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
+import { Button } from "@mui/material";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -26,7 +27,14 @@ function App() {
       <h1>Hello Saurav</h1>
       <form>
         <input value={input} onChange={inputChangeHander} type="text" />
-        <button onClick={addTodo}>Add ToDo</button>
+        <Button
+          disabled={!input}
+          onClick={addTodo}
+          variant="contained"
+          color="success"
+        >
+          Add ToDo
+        </Button>
       </form>
       <ul>
         {todos.map((item) => (
